@@ -1,7 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-function Calculator ({result}){
+function Calculator (){
+    const result = useSelector(function (state){
+        return state.calculator;
+    })
     return <>
         <div>
             <input type="text" placeholder="a"/>
@@ -15,10 +18,5 @@ function Calculator ({result}){
     </>
 }
 
-function mapStateToProps(state){
-    return {
-        result: state.calculator
-    }
-}
 
-export default connect(mapStateToProps)(Calculator);
+export default Calculator;

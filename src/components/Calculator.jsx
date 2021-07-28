@@ -2,9 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 function Calculator (){
-    const result = useSelector(function (state){
-        return state.calculator;
-    })
+    const result = useSelector(state => state.calculator)
     return <>
         <div>
             <input type="text" placeholder="a"/>
